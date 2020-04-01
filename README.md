@@ -24,5 +24,5 @@ Content-Type: application/json
 Cache-Control: no-cache
 
 {
-"userInput": "Kim loves going to the cinema"
+"userInput": "I will have the dinner.I do my homework daily on the way to school."
 }
