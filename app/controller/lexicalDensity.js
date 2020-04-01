@@ -16,6 +16,7 @@ function calculate(req, res) {
     if(req.query && req.query.mode === 'verbose'){
         __calculateVerbose(req, res);
     } else {
+
         if(!userInput) res.status(400).send({ error: 'No user input received.' });
         let overall_ld = getLexicalDensity(userInput, nonLexicalWordsList);
 
@@ -37,7 +38,7 @@ function __calculateVerbose(req, res) {
     console.log(splitInput);
       if(splitInput) {
         splitInput.forEach(sentence => {
-          sentence_ld.push(getLD(sentence, nonLexicalWordsList));
+          sentence_ld.push(getLexicalDensity(sentence, nonLexicalWordsList));
         });
       }
       overall_ld = sentence_ld.reduce((a,b)=> a+b, 0) / sentence_ld.length;
